@@ -1,0 +1,84 @@
+/* Reset cơ bản và định dạng trang */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f9f7;
+  font-family:
+    "Plus Jakarta Sans",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+/* Định dạng Button theo yêu cầu */
+.btn-custom {
+  /* 1. Màu sắc ban đầu: nền beige, chữ darkgreen */
+  background-color: beige;
+  color: darkgreen;
+
+  /* 2. Padding rộng rãi */
+  padding: 16px 36px;
+
+  /* 3. Bo tròn mềm mại */
+  border-radius: 50px;
+
+  /* 4. Font chữ hiện đại */
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  /* 5. Đường viền cùng màu để giữ kích thước cố định khi hover */
+  border: 2px solid darkgreen;
+
+  /* 6. Con trỏ chuột pointer */
+  cursor: pointer;
+
+  /* 7. Trạng thái vị trí và bóng đổ ban đầu */
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 100, 0, 0.15);
+
+  /* 8. Transition với hàm timing cubic-bezier cho chuyển động tự nhiên */
+  transition:
+    background-color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    color 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  outline: none;
+  user-select: none;
+}
+
+/* Hiệu ứng khi hover */
+.btn-custom:hover {
+  /* Đảo ngược màu nền và màu chữ */
+  background-color: darkgreen;
+  color: beige;
+
+  /* Nâng lên 3px */
+  transform: translateY(-3px);
+
+  /* Box-shadow đậm hơn */
+  box-shadow: 0 10px 22px rgba(0, 70, 0, 0.35);
+}
+
+/* Hiệu ứng khi click chuột (Active) */
+.btn-custom:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 70, 0, 0.25);
+}
