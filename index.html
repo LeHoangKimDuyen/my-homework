@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOS Effects Demo - Flips, Slides, Parallax, Delay, Reveal</title>
+
+  <!-- 1. CDN CSS AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- File CSS tùy chỉnh -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header class="hero">
+    <h1>Bộ Sưu Tập Hiệu Ứng AOS & CSS</h1>
+    <p>Cuộn chuột xuống để khám phá: Flips, Slides, Parallax, Stagger/Delay và Text Reveal</p>
+  </header>
+
+  <main class="container">
+
+    <!-- 1. SECTION FLIPS (Lật thẻ 3D) -->
+    <section class="gray-section" data-aos="fade-up">
+      <h2 class="section-title">1. Hiệu Ứng Flips (Lật 3D)</h2>
+      <p class="section-desc">Sử dụng các thuộc tính <code>flip-left</code>, <code>flip-right</code>, <code>flip-up</code></p>
+      
+      <div class="card-grid">
+        <div class="card" data-aos="flip-left" data-aos-duration="1000">
+          <h3>Flip Left</h3>
+          <p>Lật theo trục dọc từ bên trái</p>
+          <code>data-aos="flip-left"</code>
+        </div>
+        <div class="card" data-aos="flip-right" data-aos-duration="1000">
+          <h3>Flip Right</h3>
+          <p>Lật theo trục dọc từ bên phải</p>
+          <code>data-aos="flip-right"</code>
+        </div>
+        <div class="card" data-aos="flip-up" data-aos-duration="1000">
+          <h3>Flip Up</h3>
+          <p>Lật theo trục ngang từ dưới lên</p>
+          <code>data-aos="flip-up"</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. SECTION SLIDES (Trượt phần tử) -->
+    <section class="gray-section" data-aos="fade-up">
+      <h2 class="section-title">2. Hiệu Ứng Slides (Trượt)</h2>
+      <p class="section-desc">Sử dụng các thuộc tính <code>slide-right</code>, <code>slide-left</code>, <code>slide-up</code></p>
+      
+      <div class="card-grid">
+        <div class="card" data-aos="slide-right" data-aos-duration="900">
+          <h3>Slide Right</h3>
+          <p>Trượt thẳng sang phải</p>
+          <code>data-aos="slide-right"</code>
+        </div>
+        <div class="card" data-aos="slide-up" data-aos-duration="900">
+          <h3>Slide Up</h3>
+          <p>Trượt thẳng lên trên</p>
+          <code>data-aos="slide-up"</code>
+        </div>
+        <div class="card" data-aos="slide-left" data-aos-duration="900">
+          <h3>Slide Left</h3>
+          <p>Trượt thẳng sang trái</p>
+          <code>data-aos="slide-left"</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. SECTION PARALLAX (Cuộn nền tốc độ khác biệt) -->
+    <section class="parallax-banner">
+      <div class="parallax-overlay" data-aos="zoom-in" data-aos-duration="800">
+        <h2>3. Hiệu Ứng Parallax</h2>
+        <p>Ảnh nền được ghim cố định với <code>background-attachment: fixed</code> tạo chiều sâu ảo giác không gian khi cuộn trang.</p>
+      </div>
+    </section>
+
+    <!-- 4. SECTION STAGGER / DELAY (Xuất hiện so le lần lượt) -->
+    <section class="gray-section" data-aos="fade-up">
+      <h2 class="section-title">4. Hiệu Ứng Stagger / Delay (So le)</h2>
+      <p class="section-desc">Dùng thuộc tính <code>data-aos-delay</code> tăng dần để các phần tử hiện lần lượt từng cái một.</p>
+      
+      <div class="card-grid">
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
+          <h3>Phần tử 1</h3>
+          <p>Chờ 100ms trước khi hiện</p>
+          <code>data-aos-delay="100"</code>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
+          <h3>Phần tử 2</h3>
+          <p>Chờ 300ms trước khi hiện</p>
+          <code>data-aos-delay="300"</code>
+        </div>
+        <div class="card" data-aos="fade-up" data-aos-delay="500">
+          <h3>Phần tử 3</h3>
+          <p>Chờ 500ms trước khi hiện</p>
+          <code>data-aos-delay="500"</code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECTION TEXT REVEAL (Chữ lộ diện) -->
+    <section class="gray-section" data-aos="fade-up">
+      <h2 class="section-title">5. Hiệu Ứng Text Reveal (Lộ diện chữ)</h2>
+      <p class="section-desc">Kết hợp <code>data-aos="fade-up"</code> cùng container bọc có <code>overflow: hidden</code> tạo cảm giác chữ trồi lên từ bên dưới.</p>
+      
+      <div class="text-reveal-wrapper">
+        <h1 class="reveal-text" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+          CREATIVE WEB DESIGN
+        </h1>
+      </div>
+      <p data-aos="fade-up" data-aos-delay="200" style="color: #666; font-size: 1.1rem;">
+        Kỹ thuật này rất phổ biến ở các trang landing page thương hiệu hiện đại.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AOS Advanced Effects - my-homework</p>
+  </footer>
+
+  <!-- 2. Thư viện JS AOS qua CDN -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+  <!-- 3. Khởi tạo AOS -->
+  <script>
+    AOS.init({
+      duration: 800,  // Thời lượng hiệu ứng mặc định (ms)
+      once: false,    // false để xem lại hiệu ứng khi cuộn lên/xuống nhiều lần
+      mirror: true    // Cho phép animation chạy lại khi cuộn ngược lại
+    });
+  </script>
+</body>
+</html>
