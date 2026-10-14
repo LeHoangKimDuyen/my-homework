@@ -1,0 +1,113 @@
+/* ==========================================================================
+   THIẾT LẬP CHUNG GIAO DIỆN TRANG WEB
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 520px;
+    width: 100%;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 24px;
+    font-size: 1.4rem;
+    color: #222222;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: #666666;
+    margin-top: 6px;
+    margin-bottom: 24px;
+}
+
+/* ==========================================================================
+   VÒNG TRÒN LOADING VÀ HƯỚNG DẪN SỬ DỤNG BORDER-TOP-COLOR
+   ========================================================================== */
+
+/* 
+ * --------------------------------------------------------------------------
+ * [HƯỚNG DẪN SỬ DỤNG THUỘC TÍNH: border-top-color]
+ * 
+ * 1. ĐỊNH NGHĨA & CÚ PHÁP:
+ *    - border-top-color là thuộc tính CSS dùng để thiết lập màu sắc riêng 
+ *      cho đường viền phía trên (top border) của một phần tử.
+ *    - Cú pháp: border-top-color: <color>;
+ *      Ví dụ: border-top-color: #007bff;
+ *             border-top-color: rgba(0, 123, 255, 0.8);
+ *             border-top-color: transparent;
+ * 
+ * 2. CƠ CHẾ TẠO HIỆU ỨNG VÒNG XOAY SPINNER:
+ *    - Khi kết hợp với `border-radius: 50%`, phần tử hình vuông biến thành hình tròn.
+ *      Lúc này, 4 cạnh viền (top, right, bottom, left) sẽ trở thành 4 cung tròn 90 độ.
+ *    - Khi đặt đường viền cơ sở màu xám nhạt (ví dụ: #e0e0e0) cho cả 4 cạnh, 
+ *      rồi ghi đè cạnh trên bằng `border-top-color: #007bff;` (hoặc màu nổi bật),
+ *      thì 1/4 hình tròn phía trên sẽ có màu khác biệt hoàn toàn với 3/4 còn lại.
+ *    - Khi kích hoạt animation xoay 360 độ liên tục, cung tròn màu khác biệt này
+ *      sẽ chuyển động liên tục quanh tâm, tạo thành hiệu ứng vệt xoay loading kinh điển.
+ * 
+ * 3. LƯU Ý KHI SỬ DỤNG:
+ *    - Thứ tự khai báo: Thuộc tính `border-top-color` PHẢI được đặt SAU thuộc tính
+ *      gốc `border: ...` (shorthand), nếu không giá trị màu của shorthand sẽ ghi đè mất.
+ *    - Nếu muốn chỉ hiển thị 1/4 cung tròn duy nhất và ẩn phần còn lại, ta có thể đặt 
+ *      border cơ sở màu `transparent` và chỉ tô màu cho `border-top-color`.
+ * --------------------------------------------------------------------------
+ */
+
+.loader {
+    width: 60px;
+    height: 60px;
+    
+    /* 1. Tạo viền nền mờ cho cả 4 cạnh viền */
+    border: 6px solid #e2e8f0;
+    
+    /* 2. Đổi màu riêng cạnh viền trên để tạo điểm nhấn khác biệt */
+    border-top-color: #2563eb;
+    
+    /* 3. Bo tròn 50% biến khối vuông thành hình tròn */
+    border-radius: 50%;
+    
+    /* 4. Áp dụng animation xoay:
+          - spin: tên keyframes định nghĩa
+          - 1s: thời gian hoàn thành 1 vòng xoay (1 giây)
+          - linear: tốc độ xoay đều, không bị khựng hay đổi tốc độ
+          - infinite: lặp lại vô hạn lần
+    */
+    animation: spin 1s linear infinite;
+}
+
+/* ==========================================================================
+   ANIMATION XOAY 360 ĐỘ LIÊN TỤC
+   ========================================================================== */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);      /* Bắt đầu ở góc 0 độ */
+    }
+    100% {
+        transform: rotate(360deg);    /* Kết thúc 1 chu kỳ ở góc 360 độ */
+    }
+}
+

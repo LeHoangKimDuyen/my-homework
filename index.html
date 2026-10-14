@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Loading Spinner - Hiệu ứng xoay 360 độ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Vòng tròn loading chính -->
+        <div class="loader"></div>
+        
+        <h2>Đang tải dữ liệu...</h2>
+        <p class="subtitle">Vòng tròn quay 360&deg; vô hạn bằng CSS thuần</p>
+
+        <!-- ==========================================================================
+             GHI CHÚ HƯỚNG DẪN SỬ DỤNG BORDER-TOP-COLOR:
+             1. Cú pháp: border-top-color: <màu>;
+             2. Nguyên lý:
+                - border-radius: 50% biến viền vuông thành 4 cung tròn (mỗi cung 90 độ).
+                - border-top-color đổi màu riêng cung tròn phía trên, tạo sự khác biệt với các cạnh còn lại.
+                - Animation xoay 360 độ vô hạn làm cung tròn này quay quanh tâm, tạo hiệu ứng loading spinner.
+             3. Lưu ý: Luôn đặt border-top-color sau cú pháp viết tắt border (shorthand) để tránh bị ghi đè.
+             ========================================================================== -->
+    </div>
+</body>
+</html>
