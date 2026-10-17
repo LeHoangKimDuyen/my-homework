@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather & Travel Planner</title>
+    <link id="theme-stylesheet" rel="stylesheet" href="css/cute-style.css" />
+  </head>
+  <body class="theme-pleasant">
+    <!-- Dynamic Atmospheric Background Elements -->
+    <div class="ambient-glow glow-1" aria-hidden="true"></div>
+    <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+    <div class="app-wrapper">
+      <!-- Top Bar / Header -->
+      <header class="app-header glass-card">
+        <div class="brand">
+          <span class="brand-icon">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+            </svg>
+          </span>
+          <div class="brand-text">
+            <h1>Weather & Travel Planner</h1>
+            <p>Lập kế hoạch hành trình & thời tiết thông minh</p>
+          </div>
+        </div>
+
+        <!-- City Selector / Quick Filter -->
+        <div class="header-controls">
+          <label for="city-select" class="sr-only">Chọn thành phố</label>
+          <div class="select-wrapper glass-input">
+            <svg
+              class="control-icon"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <select id="city-select">
+              <!-- Populated via JavaScript -->
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Two-Column Layout -->
+      <main class="dashboard-grid">
+        <!-- LEFT COLUMN: Weather Hub & Smart Suggestions -->
+        <section class="column-left" aria-label="Thông tin thời tiết">
+          <!-- Weather Overview Card -->
+          <article class="weather-card glass-panel" id="weather-card">
+            <div class="weather-header">
+              <div>
+                <span class="location-badge" id="weather-country"
+                  >Việt Nam</span
+                >
+                <h2 class="city-name" id="weather-city">Hà Nội</h2>
+                <p class="current-date" id="weather-date">
+                  Hôm nay, 17 Tháng 10
+                </p>
+              </div>
+              <div class="weather-icon-wrapper" id="weather-icon-wrapper">
+                <!-- Dynamic SVG Weather Icon -->
+              </div>
+            </div>
+
+            <div class="weather-primary">
+              <div class="temp-display">
+                <span class="temp-val" id="weather-temp">24</span>
+                <span class="temp-unit">°C</span>
+              </div>
+              <div class="weather-condition-details">
+                <div class="condition-text" id="weather-condition">
+                  Nhiều mây, dịu mát
+                </div>
+                <div class="feels-like">
+                  Cảm giác như: <span id="weather-feels">25°C</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secondary Metrics -->
+            <div class="weather-metrics-grid">
+              <div class="metric-item glass-inset">
+                <div class="metric-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"
+                    />
+                  </svg>
+                </div>
+                <div class="metric-data">
+                  <span class="metric-label">Độ ẩm</span>
+                  <span class="metric-value" id="weather-humidity">70%</span>
+                </div>
+              </div>
+
+              <div class="metric-item glass-inset">
+                <div class="metric-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2" />
+                    <path d="M9.6 4.6A2 2 0 1 1 11 8H2" />
+                    <path d="M12.6 19.4A2 2 0 1 0 14 16H2" />
+                  </svg>
+                </div>
+                <div class="metric-data">
+                  <span class="metric-label">Tốc độ gió</span>
+                  <span class="metric-value" id="weather-wind">14 km/h</span>
+                </div>
+              </div>
+
+              <div class="metric-item glass-inset">
+                <div class="metric-icon">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="4" />
+                    <path
+                      d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                    />
+                  </svg>
+                </div>
+                <div class="metric-data">
+                  <span class="metric-label">Chỉ số UV</span>
+                  <span class="metric-value" id="weather-uv"
+                    >4 - Trung bình</span
+                  >
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Smart Suggestions Card -->
+          <article
+            class="smart-suggestion-card glass-panel"
+            id="smart-suggestion"
+          >
+            <div class="card-label-badge">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="m12 3-1.9 5.8a2 2 0 0 1-1.3 1.3L3 12l5.8 1.9a2 2 0 0 1 1.3 1.3L12 21l1.9-5.8a2 2 0 0 1 1.3-1.3L21 12l-5.8-1.9a2 2 0 0 1-1.3-1.3Z"
+                />
+              </svg>
+              Gợi ý trang phục & chuẩn bị
+            </div>
+            <div class="suggestion-content" id="suggestion-container">
+              <!-- Dynamically populated by JS based on temperature -->
+            </div>
+          </article>
+        </section>
+
+        <!-- RIGHT COLUMN: Countdown Pill Timer & Travel Itinerary -->
+        <section
+          class="column-right"
+          aria-label="Bộ đếm ngược & Lịch trình du lịch"
+        >
+          <!-- Departure Countdown Pill Card (Option 2B) -->
+          <article class="countdown-card glass-panel">
+            <div class="countdown-card-header">
+              <div class="section-title-wrap">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <h3>Đồng hồ Đếm ngược Khởi hành</h3>
+              </div>
+              <span class="status-indicator live-pulse" id="countdown-status"
+                >Đang hoạt động</span
+              >
+            </div>
+
+            <!-- Time picker control -->
+            <div class="countdown-picker-form">
+              <label for="departure-datetime">Chọn thời điểm khởi hành:</label>
+              <div class="picker-input-group">
+                <input
+                  type="datetime-local"
+                  id="departure-datetime"
+                  class="glass-input"
+                />
+                <button
+                  type="button"
+                  id="btn-save-datetime"
+                  class="glass-btn primary-btn"
+                >
+                  <span>Lưu mốc giờ</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Compact Pill Timer UI (Option 2B) -->
+            <div class="countdown-pill-container" id="countdown-pill-container">
+              <div class="compact-pill glass-pill">
+                <div class="pill-unit">
+                  <span class="pill-number" id="timer-days">00</span>
+                  <span class="pill-tag">Ngày</span>
+                </div>
+                <span class="pill-separator">:</span>
+                <div class="pill-unit">
+                  <span class="pill-number" id="timer-hours">00</span>
+                  <span class="pill-tag">Giờ</span>
+                </div>
+                <span class="pill-separator">:</span>
+                <div class="pill-unit">
+                  <span class="pill-number" id="timer-minutes">00</span>
+                  <span class="pill-tag">Phút</span>
+                </div>
+                <span class="pill-separator">:</span>
+                <div class="pill-unit">
+                  <span class="pill-number" id="timer-seconds">00</span>
+                  <span class="pill-tag">Giây</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Celebration Alert when countdown finishes -->
+            <div
+              class="celebration-banner glass-card hidden"
+              id="celebration-banner"
+            >
+              <div class="celebration-icon">🎉</div>
+              <div class="celebration-text">
+                <h4>Chuyến đi của bạn bắt đầu ngay hôm nay!</h4>
+                <p>
+                  Chúc bạn có một hành trình an toàn, thuận lợi và tràn đầy trải
+                  nghiệm tuyệt vời.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Travel Itinerary & Checklist Section -->
+          <article class="planner-card glass-panel">
+            <div class="planner-card-header">
+              <div class="section-title-wrap">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                  <polyline points="10 9 9 9 8 9" />
+                </svg>
+                <h3>Lịch trình & Kế hoạch chuyến đi</h3>
+              </div>
+              <span class="counter-badge" id="item-counter">0 mục</span>
+            </div>
+
+            <!-- Add Item Form -->
+            <form class="add-item-form" id="itinerary-form">
+              <div class="input-with-button">
+                <input
+                  type="text"
+                  id="itinerary-input"
+                  class="glass-input"
+                  placeholder="Ví dụ: Đặt vé bảo tàng, chuẩn bị sạc dự phòng..."
+                  required
+                />
+                <button type="submit" class="glass-btn primary-btn">
+                  Thêm
+                </button>
+              </div>
+            </form>
+
+            <!-- List controls: Search, Filter, Sort, Pagination Size -->
+            <div class="list-controls-bar glass-inset">
+              <div class="search-filter-group">
+                <input
+                  type="text"
+                  id="search-input"
+                  class="glass-input-sm"
+                  placeholder="Tìm kiếm theo tiêu đề..."
+                />
+                <select id="filter-status" class="glass-input-sm">
+                  <option value="all">Tất cả trạng thái</option>
+                  <option value="pending">Chưa xong</option>
+                  <option value="completed">Đã xong</option>
+                </select>
+                <select id="sort-title" class="glass-input-sm">
+                  <option value="default">Sắp xếp: Mặc định</option>
+                  <option value="asc">Tiêu đề: A → Z</option>
+                  <option value="desc">Tiêu đề: Z → A</option>
+                </select>
+              </div>
+              <div class="pagination-size-group">
+                <label for="page-size-select">Hiển thị:</label>
+                <select id="page-size-select" class="glass-input-sm">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="all">Tất cả</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Items Container -->
+            <ul class="itinerary-list" id="itinerary-list">
+              <!-- Dynamic items rendered via JS -->
+            </ul>
+
+            <!-- Pagination Navigation -->
+            <div class="pagination-footer" id="pagination-footer">
+              <!-- Rendered by JS -->
+            </div>
+          </article>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="app-footer">
+        <p>
+          Weather & Travel Planner &bull; Thiết kế Glassmorphism thuần HTML5,
+          CSS3 & JavaScript
+        </p>
+      </footer>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
