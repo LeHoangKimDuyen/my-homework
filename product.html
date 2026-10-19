@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Sản Phẩm | Rolife Super Creator</title>
+  <meta name="description" content="Chi tiết mô hình lắp ghép mini Rolife Super Creator chính hãng. Đèn LED ấm áp, khớp nối snap-fit không dùng keo.">
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="product-page-body">
+
+  <!-- STICKY HEADER -->
+  <header class="site-header scrolled" id="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="Rolife Trang chủ">
+        <span class="logo-accent">Rolife</span>
+        <span class="logo-sub">Super Creator</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Menu chính">
+        <ul class="nav-list">
+          <li><a href="index.html#hero" class="nav-link" data-i18n="nav_home">Trang chủ</a></li>
+          <li><a href="index.html#features" class="nav-link active" data-i18n="nav_features">Điểm Nổi Bật</a></li>
+          <li><a href="index.html#collection" class="nav-link" data-i18n="nav_collection">12 Căn Phòng</a></li>
+          <li><a href="index.html#specs" class="nav-link" data-i18n="nav_specs">Thông Số Kỹ Thuật</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <button type="button" class="lang-switch-btn" id="lang-toggle" aria-label="Chuyển đổi ngôn ngữ">
+          <span class="lang-active" id="current-lang">VI</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-inactive">EN</span>
+        </button>
+
+        <a href="index.html#collection" class="btn btn-sm btn-gold" data-i18n="header_cta">Bộ Sưu Tập</a>
+
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Mở menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB & BACK BUTTON -->
+  <div class="product-nav-bar">
+    <div class="container product-nav-container">
+      <a href="index.html#features" class="btn-back-link" id="btn-back-link">
+        <span class="back-arrow">←</span> <span data-i18n="btn_back_catalog">Quay lại danh sách sản phẩm</span>
+      </a>
+      <nav class="breadcrumb-trail" aria-label="Đường dẫn trang">
+        <a href="index.html" data-i18n="nav_home">Trang chủ</a>
+        <span class="breadcrumb-sep">/</span>
+        <a href="index.html#features" data-i18n="nav_features">Điểm Nổi Bật</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current" id="breadcrumb-current-product">Đang tải...</span>
+      </nav>
+    </div>
+  </div>
+
+  <!-- MAIN PRODUCT DETAIL SECTION -->
+  <main class="product-detail-main">
+    <div class="container">
+      <div class="product-detail-card-layout">
+        
+        <!-- CỘT TRÁI: THƯ VIỆN HÌNH ẢNH SẢN PHẨM -->
+        <div class="product-gallery-column">
+          <!-- Khung hiển thị ảnh chính lớn sắc nét -->
+          <div class="main-image-display-frame">
+            <img src="" alt="" id="product-main-view" class="product-main-view-img" width="650" height="650">
+            <span class="gallery-badge" id="gallery-badge">BẢN GIỚI HẠN</span>
+          </div>
+
+          <!-- Dải Thumbnails các góc chụp chi tiết -->
+          <div class="gallery-thumbnails-strip" id="gallery-thumbnails-strip" aria-label="Danh sách ảnh góc chụp chi tiết">
+            <!-- Render động bằng JavaScript dựa trên số ảnh thực tế -->
+          </div>
+
+          <p class="gallery-hint-text">
+            <span>💡</span> <span data-i18n="gallery_hint">Nhấp vào từng ảnh nhỏ để xem cận cảnh các chi tiết mô hình</span>
+          </p>
+        </div>
+
+        <!-- CỘT PHẢI: KHU VỰC THÔNG TIN VÀ NÚT MUA -->
+        <div class="product-info-column">
+          <div class="product-info-header">
+            <span class="product-category-tag" id="product-category-tag">Mẫu Giáng Sinh</span>
+            <h1 class="product-title-large" id="product-title-large">Tên Sản Phẩm</h1>
+            <p class="product-tagline" id="product-tagline">Mô tả ngắn gọn đặc điểm nổi bật.</p>
+          </div>
+
+          <!-- Khung Giá Bán -->
+          <div class="product-price-section">
+            <div class="price-row">
+              <span class="current-price" id="product-current-price">699.000đ</span>
+              <span class="original-price" id="product-original-price">899.000đ</span>
+              <span class="discount-badge" id="product-discount-badge">-22%</span>
+            </div>
+            <p class="price-note" data-i18n="price_holiday_note">⚡ Ưu đãi độc quyền mùa lễ hội Giáng Sinh 2026</p>
+          </div>
+
+          <!-- Mô Tả Chi Tiết -->
+          <div class="product-description-box">
+            <h3 class="desc-heading" data-i18n="heading_desc">Mô Tả Sản Phẩm</h3>
+            <p class="desc-content" id="product-full-desc">Nội dung mô tả chi tiết sản phẩm...</p>
+          </div>
+
+          <!-- Thông Số Kỹ Thuật (Chỉ hiển thị ở Trang Chi Tiết) -->
+          <div class="product-specs-box">
+            <h3 class="specs-heading" data-i18n="heading_specs">Thông Số Kỹ Thuật</h3>
+            <div class="specs-list-grid">
+              <div class="spec-row">
+                <span class="spec-label">🧩 <span data-i18n="spec_lbl_pieces">Số lượng chi tiết:</span></span>
+                <strong class="spec-value" id="spec-val-pieces">172 chi tiết</strong>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">⏱️ <span data-i18n="spec_lbl_time">Thời gian lắp ráp:</span></span>
+                <strong class="spec-value" id="spec-val-time">2.0 Giờ</strong>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">📐 <span data-i18n="spec_lbl_dimensions">Kích thước chuẩn:</span></span>
+                <strong class="spec-value" id="spec-val-dimensions">163 × 163 × 152 mm</strong>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">💡 <span data-i18n="spec_lbl_light">Hệ thống chiếu sáng:</span></span>
+                <strong class="spec-value" id="spec-val-light">Đèn LED vàng ấm 2700K</strong>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">🛡️ <span data-i18n="spec_lbl_material">Chất liệu cao cấp:</span></span>
+                <strong class="spec-value" id="spec-val-material">Nhựa ABS/PVC nguyên sinh</strong>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">👶 <span data-i18n="spec_lbl_age">Độ tuổi khuyến nghị:</span></span>
+                <strong class="spec-value" id="spec-val-age">Từ 8 tuổi trở lên</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- KHU VỰC HÀNH ĐỘNG: DUY NHẤT 1 NÚT MUA SẢN PHẨM -->
+          <div class="product-purchase-action">
+            <button type="button" class="btn btn-lg btn-gold btn-block btn-buy-primary" id="btn-buy-primary">
+              <span class="btn-icon">🎁</span>
+              <span id="btn-buy-text" data-i18n="btn_buy_now_action">MUA NGAY - GIAO TẬN NƠI</span>
+            </button>
+            <p class="purchase-guarantee-note" data-i18n="guarantee_note">✓ Kiểm tra hàng trước khi thanh toán • 1 đổi 1 nếu lỗi mảnh ghép</p>
+          </div>
+
+          <!-- Cam kết dịch vụ -->
+          <div class="product-trust-badges">
+            <div class="trust-badge-card">
+              <span class="badge-icon">🛡️</span>
+              <div>
+                <strong data-i18n="trust_b1_t">100% Chính Hãng</strong>
+                <p data-i18n="trust_b1_d">Tem Robotime / Rolife</p>
+              </div>
+            </div>
+            <div class="trust-badge-card">
+              <span class="badge-icon">🚚</span>
+              <div>
+                <strong data-i18n="trust_b2_t">Freeship Toàn Quốc</strong>
+                <p data-i18n="trust_b2_d">Đơn từ 499.000đ</p>
+              </div>
+            </div>
+            <div class="trust-badge-card">
+              <span class="badge-icon">🔄</span>
+              <div>
+                <strong data-i18n="trust_b3_t">Bảo Hành Mảnh Lỗi</strong>
+                <p data-i18n="trust_b3_d">Miễn phí 1 đổi 1</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL ĐẶT HÀNG NHANH (PHƯƠNG ÁN 3A) -->
+  <div class="modal-backdrop" id="product-checkout-modal" aria-hidden="true" role="dialog" aria-labelledby="modal-checkout-title">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="modal-checkout-close" aria-label="Đóng bảng đặt hàng">&times;</button>
+      <div class="modal-content">
+        <h3 class="modal-title" id="modal-checkout-title" data-i18n="checkout_title">Xác Nhận Đặt Mua</h3>
+        <p class="modal-desc" data-i18n="checkout_subtitle">Tư vấn viên sẽ gọi xác nhận thông tin nhận hàng trong vòng 15 phút.</p>
+
+        <!-- Tóm tắt sản phẩm đang mua -->
+        <div class="order-summary-mini">
+          <img src="" alt="" id="checkout-mini-img" class="summary-mini-thumb" width="60" height="60">
+          <div class="summary-mini-info">
+            <h4 id="checkout-mini-name">Tên sản phẩm</h4>
+            <p id="checkout-mini-price" class="summary-mini-price">699.000đ</p>
+          </div>
+        </div>
+
+        <form class="order-form" id="product-checkout-form">
+          <div class="form-group">
+            <label for="order-fullname" data-i18n="form_name">Họ và tên người nhận *</label>
+            <input type="text" id="order-fullname" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-group">
+            <label for="order-phone" data-i18n="form_phone">Số điện thoại nhận hàng *</label>
+            <input type="tel" id="order-phone" required placeholder="0912 345 678">
+          </div>
+          <div class="form-group">
+            <label for="order-address" data-i18n="form_address">Địa chỉ giao hàng *</label>
+            <input type="text" id="order-address" required placeholder="Số nhà, tên đường, quận/huyện, tỉnh/thành">
+          </div>
+          <div class="form-group">
+            <label for="order-voucher" data-i18n="form_voucher">Mã ưu đãi (nếu có)</label>
+            <input type="text" id="order-voucher" value="XMAS2026">
+          </div>
+          <button type="submit" class="btn btn-red btn-block" data-i18n="form_submit_order">Hoàn Tất Đặt Hàng</button>
+        </form>
+
+        <div class="order-success-msg" id="checkout-success-msg" style="display: none;">
+          <div class="success-icon">✓</div>
+          <h4 data-i18n="order_success_title">Đặt Hàng Thành Công!</h4>
+          <p data-i18n="order_success_desc">Cảm ơn bạn đã lựa chọn Rolife. Chúng tôi sẽ sớm liên hệ gửi quà tặng và đơn hàng đến bạn!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-logo footer-logo">
+          <span class="logo-accent">Rolife</span>
+          <span class="logo-sub">Super Creator</span>
+        </span>
+        <p class="footer-tagline" data-i18n="footer_tagline">Khơi nguồn sáng tạo, kiến tạo thế giới mini của riêng bạn trong từng phút giây thư giãn.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_nav">Khám Phá</h3>
+        <ul class="footer-links">
+          <li><a href="index.html#hero" data-i18n="nav_home">Trang chủ</a></li>
+          <li><a href="index.html#features" data-i18n="nav_features">Điểm Nổi Bật</a></li>
+          <li><a href="index.html#collection" data-i18n="nav_collection">12 Căn Phòng</a></li>
+          <li><a href="index.html#specs" data-i18n="nav_specs">Thông Số Kỹ Thuật</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_support">Hỗ Trợ Khách Hàng</h3>
+        <ul class="footer-links">
+          <li><span data-i18n="footer_hotline">Hotline: 1900 6868</span></li>
+          <li><span data-i18n="footer_email">Email: contact@rolife-creator.vn</span></li>
+          <li><span data-i18n="footer_warranty">Bảo hành 1 đổi 1 mảnh ghép lỗi</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_commit">Cam Kết Thương Hiệu</h3>
+        <p class="footer-commit-text" data-i18n="footer_commit_desc">100% Sản phẩm chính hãng Robotime / Rolife. Đầy đủ tem chống hàng giả và chứng nhận an toàn quốc tế.</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">&copy; 2026 Rolife Super Creator Vietnam. All rights reserved.</p>
+        <p class="footer-note" data-i18n="footer_note">Bài tập thiết kế Landing Page Quảng bá Thương hiệu Cao cấp.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Dữ liệu dùng chung & Logic trang chi tiết -->
+  <script src="js/products-data.js"></script>
+  <script src="js/product-detail.js"></script>
+</body>
+</html>

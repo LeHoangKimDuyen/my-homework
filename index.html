@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolife Super Creator - Phiên Bản Giáng Sinh | Mô Hình Lắp Ghép Mini Cao Cấp</title>
+  <meta name="description" content="Khám phá bộ mô hình lắp ghép Rolife Super Creator Giáng Sinh và hệ sinh thái 12 căn phòng mini. Lắp ráp không dùng keo, tích hợp đèn LED ấm áp.">
+  
+  <!-- Preconnect to Google Fonts for Lighthouse Performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- STICKY HEADER -->
+  <header class="site-header" id="header">
+    <div class="header-container">
+      <a href="#" class="brand-logo" aria-label="Rolife Trang chủ">
+        <span class="logo-accent">Rolife</span>
+        <span class="logo-sub">Super Creator</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Menu chính">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">Trang chủ</a></li>
+          <li><a href="#features" class="nav-link" data-i18n="nav_features">Điểm Nổi Bật</a></li>
+          <li><a href="#collection" class="nav-link" data-i18n="nav_collection">12 Căn Phòng</a></li>
+          <li><a href="#specs" class="nav-link" data-i18n="nav_specs">Thông Số Kỹ Thuật</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Language Switcher Button -->
+        <button type="button" class="lang-switch-btn" id="lang-toggle" aria-label="Chuyển đổi ngôn ngữ">
+          <span class="lang-active" id="current-lang">VI</span>
+          <span class="lang-divider">/</span>
+          <span class="lang-inactive">EN</span>
+        </button>
+
+        <!-- Order CTA in Header -->
+        <a href="#collection" class="btn btn-sm btn-gold" data-i18n="header_cta">Sở Hữu Ngay</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-label="Mở menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-wrapper">
+      <img src="images/background.webp" alt="Không gian Giáng Sinh ấm cúng" class="hero-bg-img" width="1920" height="1080" fetchpriority="high">
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="sparkle-icon">✦</span>
+          <span data-i18n="hero_badge">Phiên Bản Giới Hạn Mùa Lễ Hội 2026</span>
+        </div>
+        <h1 class="hero-title" data-i18n="hero_title">
+          Ngôi Nhà Giáng Sinh <br>
+          <span class="text-gold">Rolife Super Creator</span>
+        </h1>
+        <p class="hero-description" data-i18n="hero_desc">
+          Thắp sáng đêm đông bằng kiệt tác mô hình kiến trúc mini. 100% khớp nối snap-fit không cần keo, tích hợp đèn LED ấm áp cùng hệ sinh thái 12 căn phòng kết nối không giới hạn.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#order-now" class="btn btn-lg btn-red open-order-modal" data-i18n="hero_cta_primary">Đặt Mua Bản Giáng Sinh</a>
+          <a href="#features" class="btn btn-lg btn-outline-light" data-i18n="hero_cta_secondary">Khám Phá Chi Tiết</a>
+        </div>
+
+        <div class="hero-trust-bar">
+          <div class="trust-item">
+            <span class="trust-number">100%</span>
+            <span class="trust-label" data-i18n="trust_glue_free">Không Dùng Keo</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">LED</span>
+            <span class="trust-label" data-i18n="trust_warm_light">Đèn Vàng Ấm Áp</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">12+</span>
+            <span class="trust-label" data-i18n="trust_rooms">Căn Phòng Ghép Nối</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-card-showcase">
+          <img src="images/house-1.webp" alt="Mô hình Rolife Giáng Sinh mặt chính" class="hero-main-img" width="800" height="800" fetchpriority="high">
+          <div class="hero-floating-badge">
+            <span class="badge-title" data-i18n="badge_special">Đặc Quyền Mùa Đông</span>
+            <span class="badge-subtitle" data-i18n="badge_bonus">Kèm Bộ Chi Tiết Noel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES & GALLERY SECTION (CAROUSEL SLIDER - 6 CARD GLASSMORPHISM) -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <!-- Section Header -->
+      <div class="features-header-wrapper">
+        <div class="section-header-content">
+          <p class="section-eyebrow" data-i18n="feat_eyebrow">Bộ Sưu Tập Nổi Bật</p>
+          <h2 class="section-title" data-i18n="feat_title">Những Căn Phòng Thu Nhỏ Đầy Cảm Hứng</h2>
+          <p class="section-subtitle" data-i18n="feat_subtitle">Khám phá 6 kiệt tác mô hình mini được yêu thích nhất với thiết kế thẻ kính mờ nghệ thuật và trượt tương tác mượt mà.</p>
+        </div>
+      </div>
+
+      <!-- Carousel Outer Wrapper with Outside Left & Right Arrow Navigation -->
+      <div class="carousel-outer-wrapper">
+        <button type="button" class="slider-arrow-btn slider-prev" id="feat-slider-prev" aria-label="Trượt sang trái">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+
+        <!-- Carousel Slider Track (Cuộn ngang 6 Card - 3 Card song song trên Desktop) -->
+        <div class="features-slider-track" id="featured-slider" tabindex="0" role="region" aria-label="Băng chuyền 6 mẫu sản phẩm nổi bật">
+          
+          <!-- Card 1: Ngôi Nhà Giáng Sinh -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/house-1.webp" alt="Ngôi Nhà Giáng Sinh Rolife" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-red" data-i18n="card_1_badge">Bản Giới Hạn</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_1_title">Ngôi Nhà Giáng Sinh</h3>
+              <p class="glass-card-desc" data-i18n="card_1_desc">Khớp nối snap-fit 100% không keo, tích hợp đèn LED vàng ấm thắp sáng đêm đông.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=house" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Nông Trại Thư Thái -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/farm-house-1.webp" alt="Nông Trại Thư Thái" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-green" data-i18n="card_2_badge">Yêu Thích Nhất</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_2_title">Nông Trại Thư Thái</h3>
+              <p class="glass-card-desc" data-i18n="card_2_desc">Bếp lửa đồng quê mộc mạc, giỏ hoa quả tươi mới cùng các chi tiết đan lát tinh xảo.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=farm-house" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Tiệm Sách Cổ Tích -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/book-store-1.webp" alt="Tiệm Sách Cổ Tích" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-gold" data-i18n="card_3_badge">Bán Chạy Nhất</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_3_title">Tiệm Sách Cổ Tích</h3>
+              <p class="glass-card-desc" data-i18n="card_3_desc">Tủ sách gỗ kịch trần, thang trượt vintage và hàng trăm tựa sách văn học kinh điển.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=book-store" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Quán Cà Phê Góc Phố -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/cafe-1.webp" alt="Quán Cà Phê Góc Phố" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-green" data-i18n="card_4_badge">Mới Ra Mắt</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_4_title">Quán Cà Phê Góc Phố</h3>
+              <p class="glass-card-desc" data-i18n="card_4_desc">Quầy bar đá cẩm thạch sang trọng, máy pha espresso bóng bẩy và menu phấn vẽ tay.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=cafe" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Tiệm Bánh Ngọt Ngào -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/cake-shop-1.webp" alt="Tiệm Bánh Ngọt Ngào" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-red" data-i18n="card_5_badge">Ngọt Ngào</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_5_title">Tiệm Bánh Ngọt Ngào</h3>
+              <p class="glass-card-desc" data-i18n="card_5_desc">Tủ bánh kem thu nhỏ đa tầng, khay bánh sừng bò giòn rụm và ngập tràn sắc màu ấm.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=cake-shop" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Phòng Khách Sum Vầy -->
+          <article class="glass-card">
+            <div class="glass-card-img-wrap">
+              <img src="images/living-room-1.webp" alt="Phòng Khách Sum Vầy" loading="lazy" decoding="async" width="450" height="600" class="glass-card-bg-img">
+              <span class="glass-card-badge badge-gold" data-i18n="card_6_badge">Ấm Cúng</span>
+              <div class="glass-card-img-fade"></div>
+            </div>
+            <div class="glass-overlay">
+              <h3 class="glass-card-title" data-i18n="card_6_title">Phòng Khách Sum Vầy</h3>
+              <p class="glass-card-desc" data-i18n="card_6_desc">Sofa bọc nỉ êm ái, máy quay đĩa than cổ điển cùng chậu cây xanh thanh lọc không gian.</p>
+              <div class="glass-card-footer">
+                <a href="product.html?id=living-room" class="btn-pill-cta" data-i18n="card_cta_explore">Khám Phá</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <button type="button" class="slider-arrow-btn slider-next" id="feat-slider-next" aria-label="Trượt sang phải">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS COLLECTION SECTION (12 MẪU TÍCH HỢP TABS) -->
+  <section class="collection-section" id="collection">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow" data-i18n="coll_eyebrow">Hệ Sinh Thái Super Creator</p>
+        <h2 class="section-title" data-i18n="coll_title">Bộ Sưu Tập 12 Căn Phòng Ghép Nối Vô Hạn</h2>
+        <p class="section-subtitle" data-i18n="coll_subtitle">Tự do bài trí, xếp chồng lên nhau thành tòa lâu đài thu nhỏ. Chọn danh mục dưới đây để khám phá chi tiết từng gian phòng.</p>
+      </div>
+
+      <!-- Categories Tabs -->
+      <div class="tabs-nav-wrapper">
+        <div class="tabs-nav" role="tablist" aria-label="Bộ sưu tập căn phòng">
+          <button type="button" class="tab-btn active" role="tab" aria-selected="true" data-category="all" data-i18n="tab_all">Tất Cả (12)</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-category="living" data-i18n="tab_living">Không Gian Sống</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-category="culinary" data-i18n="tab_culinary">Ẩm Thực &amp; Thư Giãn</button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" data-category="lifestyle" data-i18n="tab_lifestyle">Sở Thích &amp; Mua Sắm</button>
+        </div>
+      </div>
+
+      <!-- Products Grid (Dynamic Loaded & Rendered via JS) -->
+      <div class="products-grid" id="products-grid">
+        <!-- Rendered dynamically by main.js with high efficiency -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SPECIFICATIONS SECTION (ACCORDION) -->
+  <section class="specs-section" id="specs">
+    <div class="container specs-container">
+      <div class="specs-intro">
+        <p class="section-eyebrow" data-i18n="spec_eyebrow">Chất Lượng Vượt Trội</p>
+        <h2 class="specs-title" data-i18n="spec_title">Được Thiết Kế Cho Trải Nghiệm Lắp Ráp Hoàn Hảo</h2>
+        <p class="specs-desc" data-i18n="spec_desc">
+          Mỗi chi tiết của Rolife Super Creator đều được kiểm định an toàn nghiêm ngặt theo tiêu chuẩn quốc tế. Tận hưởng trọn vẹn từng khoảnh khắc tĩnh tâm sau những giờ học tập và làm việc căng thẳng.
+        </p>
+        
+        <div class="spec-highlight-card">
+          <div class="highlight-item">
+            <span class="highlight-icon">⏱️</span>
+            <div>
+              <strong data-i18n="spec_hl_time_title">Thời gian hoàn thành</strong>
+              <p data-i18n="spec_hl_time_val">1.5 - 2 giờ (Lắp ghép thảnh thơi)</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🧩</span>
+            <div>
+              <strong data-i18n="spec_hl_pieces_title">Số lượng chi tiết</strong>
+              <p data-i18n="spec_hl_pieces_val">172 mảnh khuôn nhựa cao cấp</p>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">✨</span>
+            <div>
+              <strong data-i18n="spec_hl_skill_title">Độ khó đánh giá</strong>
+              <p data-i18n="spec_hl_skill_val">★★★☆☆ (Dễ dàng cho người mới)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Accordion Specifications -->
+      <div class="accordion" id="specs-accordion">
+        <!-- Accordion Item 1 -->
+        <div class="accordion-item active">
+          <button type="button" class="accordion-header" aria-expanded="true">
+            <span class="accordion-title" data-i18n="acc_dim_title">Kích Thước &amp; Trọng Lượng Chuẩn</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body" data-i18n="acc_dim_body">
+              <ul>
+                <li><strong>Kích thước hoàn thiện:</strong> 163mm × 163mm × 152mm (Dài × Rộng × Cao).</li>
+                <li><strong>Kích thước hộp đóng gói:</strong> 245mm × 180mm × 65mm.</li>
+                <li><strong>Trọng lượng sản phẩm:</strong> Khoảng 650g (Đầm tay, chắc chắn).</li>
+                <li><strong>Tỷ lệ chuẩn:</strong> Thu nhỏ tỉ lệ 1:20 chuẩn xác với kiến trúc thực tế.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 2 -->
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <span class="accordion-title" data-i18n="acc_mat_title">Chất Liệu &amp; Độ An Toàn Cao Cấp</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body" data-i18n="acc_mat_body">
+              <ul>
+                <li><strong>Chất liệu chính:</strong> Nhựa nguyên sinh ABS và PVC chuẩn an toàn quốc tế (CE, RoHS, ASTM).</li>
+                <li><strong>Màu sắc:</strong> Đúc màu nguyên khối cao cấp, không phai màu theo thời gian, thân thiện với môi trường.</li>
+                <li><strong>Tấm chắn bụi:</strong> Kính mica Acrylic trong suốt phủ màng bảo vệ chống trầy xước.</li>
+                <li><strong>Mùi hương:</strong> Hoàn toàn không mùi độc hại, an toàn tuyệt đối khi tiếp xúc trực tiếp.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 3 -->
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <span class="accordion-title" data-i18n="acc_elec_title">Hệ Thống Đèn LED &amp; Nguồn Điện</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body" data-i18n="acc_elec_body">
+              <ul>
+                <li><strong>Bóng đèn:</strong> Vi sợi LED nhiệt độ màu vàng ấm 2700K êm mắt.</li>
+                <li><strong>Công tắc:</strong> Nút bấm cảm ứng / switch tinh tế giấu kín phía sau tường.</li>
+                <li><strong>Nguồn điện:</strong> Sử dụng 2 pin AAA tiện lợi, dễ dàng thay thế không cần dây điện rườm rà.</li>
+                <li><strong>Tuổi thọ đèn:</strong> Hơn 10.000 giờ chiếu sáng liên tục không sinh nhiệt.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion Item 4 -->
+        <div class="accordion-item">
+          <button type="button" class="accordion-header" aria-expanded="false">
+            <span class="accordion-title" data-i18n="acc_age_title">Độ Tuổi &amp; Hướng Dẫn Lắp Ráp</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-body" data-i18n="acc_age_body">
+              <ul>
+                <li><strong>Độ tuổi phù hợp:</strong> Khuyến nghị từ 8 tuổi trở lên. Rất thích hợp cho người lớn giải tỏa áp lực.</li>
+                <li><strong>Công cụ phụ trợ:</strong> Kèm kẹp nhíp chuyên dụng và sách hướng dẫn minh họa màu 3D từng bước.</li>
+                <li><strong>Không cần keo:</strong> Các mối mộng thông minh tự khóa chặt khi ghép vào vị trí.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FESTIVE CTA BANNER -->
+  <section class="cta-banner-section" id="order-now">
+    <div class="container">
+      <div class="cta-banner-box">
+        <div class="cta-banner-text">
+          <p class="cta-eyebrow" data-i18n="cta_box_eyebrow">Ưu Đãi Đặc Biệt Mùa Giáng Sinh</p>
+          <h2 class="cta-banner-title" data-i18n="cta_box_title">Sẵn Sàng Thắp Sáng Không Gian Của Bạn?</h2>
+          <p class="cta-banner-desc" data-i18n="cta_box_desc">Tặng ngay bộ phụ kiện trang trí Noel độc quyền &amp; miễn phí vận chuyển toàn quốc cho 100 đơn hàng đầu tiên.</p>
+        </div>
+        <div class="cta-banner-action">
+          <button type="button" class="btn btn-lg btn-gold open-order-modal" data-i18n="cta_box_btn">Đặt Mua Ngay - 699.000đ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <span class="brand-logo footer-logo">
+          <span class="logo-accent">Rolife</span>
+          <span class="logo-sub">Super Creator</span>
+        </span>
+        <p class="footer-tagline" data-i18n="footer_tagline">Khơi nguồn sáng tạo, kiến tạo thế giới mini của riêng bạn trong từng phút giây thư giãn.</p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_nav">Khám Phá</h3>
+        <ul class="footer-links">
+          <li><a href="#hero" data-i18n="nav_home">Trang chủ</a></li>
+          <li><a href="#features" data-i18n="nav_features">Điểm Nổi Bật</a></li>
+          <li><a href="#collection" data-i18n="nav_collection">12 Căn Phòng</a></li>
+          <li><a href="#specs" data-i18n="nav_specs">Thông Số Kỹ Thuật</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_support">Hỗ Trợ Khách Hàng</h3>
+        <ul class="footer-links">
+          <li><span data-i18n="footer_hotline">Hotline: 1900 6868</span></li>
+          <li><span data-i18n="footer_email">Email: contact@rolife-creator.vn</span></li>
+          <li><span data-i18n="footer_warranty">Bảo hành 1 đổi 1 mảnh ghép lỗi</span></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-col-title" data-i18n="footer_col_commit">Cam Kết Thương Hiệu</h3>
+        <p class="footer-commit-text" data-i18n="footer_commit_desc">100% Sản phẩm chính hãng Robotime / Rolife. Đầy đủ tem chống hàng giả và chứng nhận an toàn quốc tế.</p>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright">&copy; 2026 Rolife Super Creator Vietnam. All rights reserved.</p>
+        <p class="footer-note" data-i18n="footer_note">Bài tập thiết kế Landing Page Quảng bá Thương hiệu Cao cấp.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PROMO MODAL (Auto-pops after 10s) -->
+  <div class="modal-backdrop" id="promo-modal" aria-hidden="true" role="dialog" aria-labelledby="promo-title">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="promo-close" aria-label="Đóng bảng khuyến mãi">&times;</button>
+      <div class="modal-content">
+        <div class="promo-badge">XMAS GIFT 🎁</div>
+        <h3 class="modal-title" id="promo-title" data-i18n="modal_title">Món Quà Giáng Sinh Dành Riêng Cho Bạn!</h3>
+        <p class="modal-desc" data-i18n="modal_desc">Nhập mã ưu đãi bên dưới để được <strong>giảm ngay 10%</strong> cho đơn hàng mô hình Rolife đầu tiên hôm nay.</p>
+        <div class="voucher-box">
+          <span class="voucher-code" id="voucher-code">XMAS2026</span>
+          <button type="button" class="btn btn-sm btn-outline-gold" id="copy-voucher-btn" data-i18n="btn_copy">Sao Chép Mã</button>
+        </div>
+        <p class="voucher-toast" id="voucher-toast" aria-live="polite"></p>
+        <button type="button" class="btn btn-red btn-block open-order-modal" id="modal-cta-btn" data-i18n="modal_cta">Áp Dụng &amp; Đặt Hàng Ngay</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCT DETAIL / GALLERY PREVIEW MODAL -->
+  <div class="modal-backdrop" id="gallery-modal" aria-hidden="true" role="dialog" aria-labelledby="gallery-modal-title">
+    <div class="modal-dialog modal-dialog-lg">
+      <button type="button" class="modal-close-btn" id="gallery-modal-close" aria-label="Đóng thư viện ảnh">&times;</button>
+      <div class="modal-content">
+        <div class="gallery-modal-header">
+          <h3 class="modal-title" id="gallery-modal-title">Tên Căn Phòng</h3>
+          <p class="modal-subtitle" id="gallery-modal-subtitle">Bộ sưu tập chi tiết</p>
+        </div>
+        <div class="gallery-modal-main-img-wrap">
+          <img src="" alt="" id="gallery-modal-main-img" class="gallery-modal-main-img" width="700" height="700">
+        </div>
+        <div class="gallery-modal-thumbs" id="gallery-modal-thumbs">
+          <!-- Thumbnails loaded dynamically -->
+        </div>
+        <div class="gallery-modal-footer">
+          <button type="button" class="btn btn-gold open-order-modal" data-i18n="gallery_modal_order">Đặt Mua Mẫu Này</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER MODAL (Direct checkout simulation) -->
+  <div class="modal-backdrop" id="order-modal" aria-hidden="true" role="dialog" aria-labelledby="order-title">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="order-modal-close" aria-label="Đóng bảng đặt hàng">&times;</button>
+      <div class="modal-content">
+        <h3 class="modal-title" id="order-title" data-i18n="order_title">Đặt Mua Mô Hình Rolife</h3>
+        <p class="modal-desc" data-i18n="order_desc">Để lại thông tin nhận hàng, tư vấn viên của chúng tôi sẽ liên hệ xác nhận trong vòng 15 phút.</p>
+        <form class="order-form" id="order-form">
+          <div class="form-group">
+            <label for="customer-name" data-i18n="form_name">Họ và tên *</label>
+            <input type="text" id="customer-name" required placeholder="Nguyễn Văn A">
+          </div>
+          <div class="form-group">
+            <label for="customer-phone" data-i18n="form_phone">Số điện thoại nhận hàng *</label>
+            <input type="tel" id="customer-phone" required placeholder="0912 345 678">
+          </div>
+          <div class="form-group">
+            <label for="product-select" data-i18n="form_product">Chọn phiên bản *</label>
+            <select id="product-select">
+              <option value="house" data-i18n="opt_house">Phiên bản Giáng Sinh (Chính) - 699.000đ</option>
+              <option value="farm-house" data-i18n="opt_farm">Nông trại thư thái (Cozy Farmhouse) - 499.000đ</option>
+              <option value="book-store" data-i18n="opt_book">Tiệm sách cổ tích (Vintage Bookshop) - 499.000đ</option>
+              <option value="cafe" data-i18n="opt_cafe">Quán cà phê góc phố (Corner Cafe) - 499.000đ</option>
+              <option value="cake-shop" data-i18n="opt_cake">Tiệm bánh ngọt ngào (Sweet Bakery) - 499.000đ</option>
+              <option value="combo" data-i18n="opt_combo">Combo Nhà Giáng Sinh + 3 Căn Phòng Tùy Chọn - Giảm 20%</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="voucher-input" data-i18n="form_voucher">Mã ưu đãi (nếu có)</label>
+            <input type="text" id="voucher-input" placeholder="XMAS2026">
+          </div>
+          <button type="submit" class="btn btn-red btn-block" data-i18n="form_submit">Xác Nhận Đặt Hàng</button>
+        </form>
+        <div class="order-success-msg" id="order-success-msg" style="display: none;">
+          <div class="success-icon">✓</div>
+          <h4 data-i18n="order_success_title">Đặt Hàng Thành Công!</h4>
+          <p data-i18n="order_success_desc">Cảm ơn bạn đã lựa chọn Rolife. Chúng tôi sẽ sớm liên hệ gửi quà tặng và đơn hàng đến bạn!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
