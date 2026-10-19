@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WonderBook Hub | Thư Viện Xứ Sở Kỳ Diệu</title>
+  
+  <!-- Google Fonts: Playfair Display (Serif cổ điển) và Plus Jakarta Sans (Sans-serif hiện đại) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HEADER & MENU ĐIỀU HƯỚNG
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Logo thương hiệu -->
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">WonderBook Hub</span>
+      </a>
+
+      <!-- Menu điều hướng chính -->
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="index.html" class="nav-link active">Trang chủ</a>
+        <a href="#featured" class="nav-link">Tủ sách</a>
+        <a href="#quotes" class="nav-link">Trích dẫn</a>
+      </nav>
+
+      <!-- Ô tìm kiếm sách nhanh -->
+      <form class="header-search" onsubmit="event.preventDefault(); alert('Chức năng tìm kiếm nhanh đang được phát triển!');">
+        <input type="text" class="search-input" placeholder="Tìm tên sách, tác giả..." aria-label="Tìm kiếm sách">
+        <button type="submit" class="search-btn" title="Tìm kiếm">🔍</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         2. HERO SECTION (Banner lớn & Slogan cảm hứng)
+         ========================================================================= -->
+    <section class="hero-section">
+      <div class="container hero-content">
+        <span class="hero-tag">✨ Di sản Văn học Kinh điển</span>
+        <h1 class="hero-title">Khám Phá Chiều Sâu Tri Thức Qua Từng Trang Sách</h1>
+        <p class="hero-subtitle">
+          Chào mừng bạn đến với Thư viện Xứ Sở Kỳ Diệu — không gian lưu giữ, tôn vinh và đánh giá những kiệt tác văn chương bất hủ qua nhiều thế hệ.
+        </p>
+        <a href="#featured" class="btn btn-primary">
+          <span>Khám phá ngay</span>
+          <span>↓</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         3. QUOTE SECTION (Trích dẫn ngẫu nhiên từ tác giả kinh điển)
+         ========================================================================= -->
+    <section class="quote-section" id="quotes">
+      <div class="container">
+        <div class="quote-box">
+          <div class="quote-icon">“</div>
+          <!-- Nội dung trích dẫn được thay đổi động bởi JavaScript -->
+          <blockquote class="quote-text" id="quoteText">
+            "Không phải tất cả những ai lang thang đều bị lạc lối."
+          </blockquote>
+          <div class="quote-footer">
+            <div class="quote-meta">
+              <span class="quote-author" id="quoteAuthor">J.R.R. Tolkien</span>
+              <span class="quote-work" id="quoteWork">— Chúa tể những chiếc nhẫn</span>
+            </div>
+            <!-- Nút đổi trích dẫn khác -->
+            <button id="nextQuoteBtn" class="btn btn-secondary btn-sm" type="button">
+              <span>↻ Trích dẫn khác</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. FEATURED BOOKS SECTION (Lưới sách nổi bật - CSS Grid)
+         ========================================================================= -->
+    <section class="featured-section" id="featured">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Tác Phẩm Nổi Bật</h2>
+          <p class="section-desc">Những cuốn sách kinh điển được tuyển chọn và đánh giá cao nhất</p>
+        </div>
+
+        <!-- Lưới thẻ sách -->
+        <div class="book-grid">
+
+          <!-- Thẻ sách 1: Hoàng Tử Bé -->
+          <article class="book-card">
+            <div class="book-cover-wrapper">
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=700&q=80" alt="Bìa sách Hoàng Tử Bé" class="book-cover-img" loading="lazy">
+              <span class="book-badge">Kinh điển</span>
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">
+                <a href="detail.html?id=1">Hoàng Tử Bé</a>
+              </h3>
+              <p class="book-author">Antoine de Saint-Exupéry</p>
+              <div class="book-rating" title="Đánh giá: 4.9/5">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.9</span>
+              </div>
+              <div class="book-actions">
+                <a href="detail.html?id=1" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                <button class="btn btn-gold btn-sm btn-add-shelf" data-title="Hoàng Tử Bé" type="button">+ Tủ sách</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Thẻ sách 2: Chúa Tể Những Chiếc Nhẫn -->
+          <article class="book-card">
+            <div class="book-cover-wrapper">
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=80" alt="Bìa sách Chúa Tể Những Chiếc Nhẫn" class="book-cover-img" loading="lazy">
+              <span class="book-badge">Sử thi</span>
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">
+                <a href="detail.html?id=2">Chúa Tể Những Chiếc Nhẫn</a>
+              </h3>
+              <p class="book-author">J.R.R. Tolkien</p>
+              <div class="book-rating" title="Đánh giá: 4.8/5">
+                <span class="stars">★★★★★</span>
+                <span class="rating-score">4.8</span>
+              </div>
+              <div class="book-actions">
+                <a href="detail.html?id=2" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                <button class="btn btn-gold btn-sm btn-add-shelf" data-title="Chúa Tể Những Chiếc Nhẫn" type="button">+ Tủ sách</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Thẻ sách 3: Án Mạng Trên Chuyến Tàu Tốc Hành Phương Đông -->
+          <article class="book-card">
+            <div class="book-cover-wrapper">
+              <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&w=700&q=80" alt="Bìa sách Án Mạng Trên Chuyến Tàu Tốc Hành Phương Đông" class="book-cover-img" loading="lazy">
+              <span class="book-badge">Trinh thám</span>
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">
+                <a href="detail.html?id=3">Án Mạng Tàu Phương Đông</a>
+              </h3>
+              <p class="book-author">Agatha Christie</p>
+              <div class="book-rating" title="Đánh giá: 4.7/5">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-score">4.7</span>
+              </div>
+              <div class="book-actions">
+                <a href="detail.html?id=3" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                <button class="btn btn-gold btn-sm btn-add-shelf" data-title="Án Mạng Trên Chuyến Tàu Tốc Hành Phương Đông" type="button">+ Tủ sách</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Thẻ sách 4: Kiêu Hãnh Và Định Kiến -->
+          <article class="book-card">
+            <div class="book-cover-wrapper">
+              <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?auto=format&fit=crop&w=700&q=80" alt="Bìa sách Kiêu Hãnh Và Định Kiến" class="book-cover-img" loading="lazy">
+              <span class="book-badge">Lãng mạn</span>
+            </div>
+            <div class="book-info">
+              <h3 class="book-title">
+                <a href="detail.html?id=4">Kiêu Hãnh & Định Kiến</a>
+              </h3>
+              <p class="book-author">Jane Austen</p>
+              <div class="book-rating" title="Đánh giá: 4.6/5">
+                <span class="stars">★★★★☆</span>
+                <span class="rating-score">4.6</span>
+              </div>
+              <div class="book-actions">
+                <a href="detail.html?id=4" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                <button class="btn btn-gold btn-sm btn-add-shelf" data-title="Kiêu Hãnh Và Định Kiến" type="button">+ Tủ sách</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       5. FOOTER (Bản quyền, Mạng xã hội, SDG 4)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Cột 1: Giới thiệu dự án -->
+        <div class="footer-col">
+          <h4>WonderBook Hub</h4>
+          <p class="footer-desc">
+            Không gian phi lợi nhuận hướng tới việc lan tỏa tình yêu sách, bảo tồn và kết nối các thế hệ độc giả với tinh hoa văn học nhân loại.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+            <a href="#" class="social-btn" aria-label="Goodreads">📚</a>
+            <a href="#" class="social-btn" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+
+        <!-- Cột 2: Liên kết điều hướng nhanh -->
+        <div class="footer-col">
+          <h4>Khám Phá</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="#featured">Danh mục sách nổi bật</a></li>
+            <li><a href="#quotes">Kho trích dẫn danh ngôn</a></li>
+            <li><a href="detail.html?id=1">Tác phẩm tiêu biểu</a></li>
+          </ul>
+        </div>
+
+        <!-- Cột 3: Cam kết Văn Hóa Đọc (SDG 4) -->
+        <div class="footer-col">
+          <h4>Văn Hóa Đọc & Phát Triển</h4>
+          <div class="sdg-badge-box">
+            <span class="sdg-tag">🌱 Hưởng ứng SDG 4: Giáo dục chất lượng</span>
+            <p>
+              Chúng tôi cam kết thúc đẩy việc học tập suốt đời, bình đẳng trong tiếp cận tri thức và nâng cao văn hóa đọc sách có chiều sâu trong cộng đồng.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WonderBook Hub - Thư viện Xứ Sở Kỳ Diệu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tệp logic JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

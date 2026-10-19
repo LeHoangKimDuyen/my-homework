@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi Tiết Tác Phẩm | WonderBook Hub</title>
+  
+  <!-- Google Fonts: Playfair Display (Serif cổ điển) và Plus Jakarta Sans (Sans-serif hiện đại) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS Stylesheet dùng chung -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. HEADER & MENU ĐIỀU HƯỚNG (Đồng bộ với index.html)
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon">📖</span>
+        <span class="logo-text">WonderBook Hub</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Điều hướng chính">
+        <a href="index.html" class="nav-link">Trang chủ</a>
+        <a href="index.html#featured" class="nav-link active">Tủ sách</a>
+        <a href="index.html#quotes" class="nav-link">Trích dẫn</a>
+      </nav>
+
+      <form class="header-search" onsubmit="event.preventDefault(); alert('Chức năng tìm kiếm nhanh đang được phát triển!');">
+        <input type="text" class="search-input" placeholder="Tìm tên sách, tác giả..." aria-label="Tìm kiếm sách">
+        <button type="submit" class="search-btn" title="Tìm kiếm">🔍</button>
+      </form>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. NỘI DUNG CHI TIẾT SÁCH (DETAIL MAIN)
+       ========================================================================= -->
+  <main class="detail-main">
+    <div class="container">
+      
+      <!-- Nút Quay lại trang chủ -->
+      <div class="back-nav">
+        <a href="index.html" class="btn-back">
+          <span>←</span>
+          <span>Quay lại trang chủ</span>
+        </a>
+      </div>
+
+      <!-- Khung Chi Tiết Sách (Bố cục 2 cột) -->
+      <section class="detail-layout" id="bookDetailContainer">
+        
+        <!-- Cột trái: Bìa sách lớn -->
+        <div class="detail-cover-col">
+          <img id="detailCover" src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=700&q=80" alt="Bìa sách" class="detail-cover-img">
+        </div>
+
+        <!-- Cột phải: Thông tin sách chi tiết -->
+        <div class="detail-info-col">
+          <div>
+            <h1 class="detail-book-title" id="detailTitle">Hoàng Tử Bé</h1>
+            <p id="detailOriginalTitle" style="color: var(--text-light); font-style: italic; margin-top: 0.2rem;">(Le Petit Prince)</p>
+          </div>
+
+          <!-- Thông số siêu dữ liệu (Meta tags) -->
+          <div class="detail-meta-list">
+            <div class="detail-meta-item">
+              <strong>Tác giả:</strong> <span id="detailAuthor">Antoine de Saint-Exupéry</span>
+            </div>
+            <div class="detail-meta-item">
+              <strong>Thể loại:</strong> <span id="detailGenre">Văn học kinh điển, Triết lý</span>
+            </div>
+            <div class="detail-meta-item">
+              <strong>Năm xuất bản:</strong> <span id="detailYear">1943</span>
+            </div>
+            <div class="detail-meta-item">
+              <strong>Độ dài:</strong> <span id="detailPages">112 trang</span>
+            </div>
+          </div>
+
+          <!-- Đánh giá sao -->
+          <div class="detail-rating">
+            <span class="stars" id="detailStars">★★★★★</span>
+            <strong id="detailScore">4.9/5.0</strong>
+            <span style="color: var(--text-light); font-size: 0.9rem;">(Dựa trên 1,280 lượt bình chọn)</span>
+          </div>
+
+          <!-- Đoạn tóm tắt nội dung -->
+          <div class="synopsis-block">
+            <h3>Tóm tắt nội dung</h3>
+            <p class="synopsis-text" id="detailSynopsis">
+              Hoàng Tử Bé là tác phẩm văn học nổi tiếng nhất của nhà văn và phi công người Pháp Antoine de Saint-Exupéry. Cuốn sách kể về cuộc gặp gỡ kỳ lạ giữa một phi công bị rơi máy bay trên sa mạc Sahara và một hoàng tử bé nhỏ đến từ một tiểu hành tinh xa xôi.
+            </p>
+          </div>
+
+          <!-- Trích dẫn hay trong tác phẩm -->
+          <div class="quotes-block">
+            <h3>Trích dẫn kinh điển</h3>
+            <blockquote class="excerpt-quote" id="detailNotableQuote">
+              “Người ta chỉ thấy rõ bằng trái tim. Cái cốt tử thì vô hình trước mắt trần.”
+            </blockquote>
+          </div>
+
+          <!-- Nút hành động -->
+          <div class="detail-actions">
+            <button class="btn btn-primary btn-add-shelf" id="detailAddShelfBtn" data-title="Tác phẩm này" type="button">
+              <span>+ Thêm vào danh sách đọc</span>
+            </button>
+            <button class="btn btn-secondary" onclick="alert('Đã sao chép liên kết chia sẻ cuốn sách này!');" type="button">
+              <span>Chia sẻ tác phẩm</span>
+            </button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- =======================================================================
+           3. REVIEW FORM SECTION (Form đánh giá và bình luận)
+           ======================================================================= -->
+      <section class="review-section">
+        <h3>Gửi Đánh Giá Của Bạn</h3>
+        <p class="review-desc">
+          Chia sẻ cảm nghĩ của bạn về tác phẩm <strong id="reviewBookName">cuốn sách</strong> để cùng xây dựng cộng đồng yêu văn chương.
+        </p>
+
+        <form class="review-form" id="bookReviewForm">
+          <div class="form-group">
+            <label for="reviewerName">Tên của bạn *</label>
+            <input type="text" id="reviewerName" class="form-control" placeholder="Nhập họ và tên hoặc biệt danh..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewRating">Mức độ đánh giá (Điểm sao) *</label>
+            <select id="reviewRating" class="form-control" required>
+              <option value="5">★★★★★ - Tuyệt tác xuất sắc (5/5)</option>
+              <option value="4">★★★★☆ - Rất đáng đọc (4/5)</option>
+              <option value="3">★★★☆☆ - Khá ổn (3/5)</option>
+              <option value="2">★★☆☆☆ - Dưới kỳ vọng (2/5)</option>
+              <option value="1">★☆☆☆☆ - Không ấn tượng (1/5)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="reviewComment">Cảm nhận / Bình luận chi tiết *</label>
+            <textarea id="reviewComment" class="form-control" rows="4" placeholder="Viết cảm nhận của bạn về cốt truyện, nhân vật hoặc bài học rút ra từ trang sách..." required></textarea>
+          </div>
+
+          <div>
+            <button type="submit" class="btn btn-primary">
+              <span>Gửi đánh giá</span>
+              <span>✉</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       4. FOOTER (Đồng bộ giao diện)
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>WonderBook Hub</h4>
+          <p class="footer-desc">
+            Không gian phi lợi nhuận hướng tới việc lan tỏa tình yêu sách, bảo tồn và kết nối các thế hệ độc giả với tinh hoa văn học nhân loại.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+            <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+            <a href="#" class="social-btn" aria-label="Goodreads">📚</a>
+            <a href="#" class="social-btn" aria-label="GitHub">🐙</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Khám Phá</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="index.html#featured">Danh mục sách nổi bật</a></li>
+            <li><a href="index.html#quotes">Kho trích dẫn danh ngôn</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Văn Hóa Đọc & Phát Triển</h4>
+          <div class="sdg-badge-box">
+            <span class="sdg-tag">🌱 Hưởng ứng SDG 4: Giáo dục chất lượng</span>
+            <p>
+              Chúng tôi cam kết thúc đẩy việc học tập suốt đời, bình đẳng trong tiếp cận tri thức và nâng cao văn hóa đọc sách có chiều sâu trong cộng đồng.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 WonderBook Hub - Thư viện Xứ Sở Kỳ Diệu. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Tệp logic JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
