@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký Hội thảo Chuyên đề Web Engineering 2026</title>
+  <!-- Google Fonts: Plus Jakarta Sans (Tiêu đề hiện đại, chuyên nghiệp) & Inter (Nội dung rõ nét, chuẩn UX) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Container chính theo phong cách Editorial/Bento layout -->
+  <main class="page-wrapper">
+    <div class="layout-container">
+      
+      <!-- Cột trái: Thông tin sự kiện (Editorial Header) -->
+      <section class="event-panel" aria-labelledby="event-title">
+        <div class="badge-series">Hội thảo Chuyên ngành 2026</div>
+        <h1 id="event-title" class="event-title">Thiết Kế Web Hiện Đại &amp; Tự Động Hóa Dữ Liệu</h1>
+        <p class="event-desc">
+          Buổi chia sẻ chuyên sâu về tư duy xây dựng kiến trúc Web chuẩn mực, kỹ thuật xử lý bất đồng bộ và tự động hóa quy trình lưu trữ dữ liệu trực tiếp với Google Sheets.
+        </p>
+
+        <!-- Thẻ trạng thái số chỗ còn lại (Live Capacity Counter) -->
+        <div class="seat-status-card" id="seatCard">
+          <div class="seat-status-header">
+            <span class="status-indicator" id="statusDot"></span>
+            <span class="status-label" id="statusLabel">Tình trạng chỗ ngồi</span>
+          </div>
+          <div class="seat-numbers">
+            <span class="seat-count" id="remainingSeats">--</span>
+            <span class="seat-total">/ 50 chỗ khả dụng</span>
+          </div>
+          <div class="seat-progress-bar">
+            <div class="seat-progress-fill" id="progressFill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Thông tin thời gian & địa điểm theo Bento cells -->
+        <div class="bento-grid-meta">
+          <div class="bento-cell">
+            <span class="meta-label">Thời gian</span>
+            <strong class="meta-value">08:30 — Thứ Bảy, 31/10/2026</strong>
+          </div>
+          <div class="bento-cell">
+            <span class="meta-label">Địa điểm</span>
+            <strong class="meta-value">Hội trường A, Tầng 3 — Tòa nhà Công nghệ</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cột phải: Form đăng ký sự kiện -->
+      <section class="form-panel" aria-labelledby="form-heading">
+        <div class="form-header">
+          <h2 id="form-heading" class="form-title">Đăng ký tham dự</h2>
+          <p class="form-subtitle">Điền thông tin chính xác để hệ thống gửi vé mời và mã QR điểm danh qua email.</p>
+        </div>
+
+        <!-- Banner thông báo khi đã hết chỗ ngồi -->
+        <div class="sold-out-banner" id="soldOutBanner" style="display: none;">
+          <div class="banner-title">Rất tiếc, sự kiện đã đủ số lượng</div>
+          <p class="banner-text">Cổng đăng ký đã tự động đóng vì đạt giới hạn 50 người tham dự.</p>
+        </div>
+
+        <!-- Form nhập liệu chính -->
+        <form id="registrationForm" class="registration-form" novalidate>
+          
+          <!-- Họ và tên -->
+          <div class="form-group" id="groupFullName">
+            <label for="fullName" class="field-label">Họ và tên <span class="required">*</span></label>
+            <input 
+              type="text" 
+              id="fullName" 
+              name="fullName" 
+              class="form-input" 
+              placeholder="Nguyễn Văn A" 
+              autocomplete="name" 
+              required
+            >
+            <span class="error-message" id="fullNameError">Vui lòng nhập họ và tên của bạn.</span>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group" id="groupEmail">
+            <label for="email" class="field-label">Địa chỉ Email <span class="required">*</span></label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              class="form-input" 
+              placeholder="tenban@domain.com" 
+              autocomplete="email" 
+              required
+            >
+            <span class="error-message" id="emailError">Định dạng email chưa hợp lệ (ví dụ: tenban@domain.com).</span>
+          </div>
+
+          <!-- Số điện thoại -->
+          <div class="form-group" id="groupPhone">
+            <label for="phone" class="field-label">Số điện thoại <span class="required">*</span></label>
+            <input 
+              type="tel" 
+              id="phone" 
+              name="phone" 
+              class="form-input" 
+              placeholder="0912345678" 
+              autocomplete="tel" 
+              required
+            >
+            <span class="error-message" id="phoneError">Số điện thoại Việt Nam gồm 10 chữ số (bắt đầu bằng số 0).</span>
+          </div>
+
+          <!-- Nút gửi Form với Loading State tích hợp -->
+          <button type="submit" id="submitBtn" class="submit-button">
+            <span class="btn-text">Xác nhận đăng ký</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+
+          <!-- Thông báo lỗi chung nếu gửi thất bại -->
+          <div class="form-feedback-error" id="generalError" style="display: none;"></div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Modal / Pop-up thông báo thành công tích hợp QR Code -->
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-badge">Đăng ký thành công</div>
+      <h3 id="modalTitle" class="modal-title">Vé tham dự đã được xác nhận</h3>
+      <p class="modal-desc">
+        Hệ thống đã lưu thông tin vào danh sách và gửi thư xác nhận đến hòm thư của bạn. Vui lòng lưu lại mã QR dưới đây để làm thủ tục check-in tại quầy đón tiếp.
+      </p>
+
+      <!-- Khung chứa ảnh QR Code lấy từ QuickChart API -->
+      <div class="ticket-box">
+        <div class="qr-container">
+          <img id="qrCodeImage" src="" alt="Mã QR Code điểm danh" class="qr-image" width="180" height="180">
+        </div>
+        <div class="ticket-details">
+          <div class="ticket-row">
+            <span class="ticket-label">Người tham dự:</span>
+            <strong class="ticket-val" id="attendeeName">--</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Email:</span>
+            <strong class="ticket-val" id="attendeeEmail">--</strong>
+          </div>
+          <div class="ticket-row">
+            <span class="ticket-label">Mã vé:</span>
+            <code class="ticket-code" id="ticketCode">--</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" id="closeModalBtn" class="close-modal-button">Đóng cửa sổ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

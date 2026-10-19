@@ -1,0 +1,580 @@
+/* ==========================================================================
+   BÀI TẬP 3: HỆ THỐNG ĐĂNG KÝ SỰ KIỆN TÍCH HỢP GOOGLE SHEETS
+   Triết lý thiết kế: Anti-AI / Editorial Craftsmanship
+   - Tránh AI gradient neon tím/xanh, không dùng glassmorphism đục mờ
+   - Đường nét 1px tinh gọn, bố cục Bento Grid tương phản, typographic hierarchy rõ ràng
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties (Design Tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-bg: #F9F8F6;          /* Nền màu phấn kem ấm (Warm neutral), không chói mắt */
+  --color-surface: #FFFFFF;     /* Nền bề mặt hộp thẻ */
+  --color-surface-subtle: #F2EFE9; /* Nền khối phụ trợ */
+  --color-text-main: #181716;   /* Màu chữ chính đen than ấm, tương phản cao */
+  --color-text-muted: #646059;  /* Màu chữ phụ trợ xám cát */
+  --color-border: #E5E1D8;      /* Đường viền mỏng tự nhiên */
+  --color-border-dark: #181716; /* Đường viền nhấn mạnh */
+  
+  --color-accent: #264653;      /* Xanh chàm cổ điển (Deep Slate Teal) làm điểm nhấn duy nhất */
+  --color-accent-hover: #1D353F;
+  --color-success: #2A9D8F;     /* Xanh ngọc lục bảo biểu thị trạng thái còn chỗ */
+  --color-danger: #C84B31;      /* Đỏ gạch nung biểu thị lỗi/hết chỗ */
+
+  --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --shadow-subtle: 0 4px 20px rgba(24, 23, 22, 0.05);
+  --shadow-modal: 0 20px 40px rgba(24, 23, 22, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base Typography
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --------------------------------------------------------------------------
+   3. Layout Container (Editorial Bento Style)
+   -------------------------------------------------------------------------- */
+.page-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.layout-container {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 32px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   4. Event Panel (Cột trái)
+   -------------------------------------------------------------------------- */
+.event-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid var(--color-border);
+  padding-right: 36px;
+}
+
+.badge-series {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.event-title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--color-text-main);
+  margin-bottom: 20px;
+}
+
+.event-desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 50ch;
+  margin-bottom: 36px;
+}
+
+/* Thẻ tình trạng chỗ ngồi */
+.seat-status-card {
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+
+.seat-status-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-success);
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.2);
+  transition: background-color 0.3s var(--ease-smooth);
+}
+
+.status-indicator.sold-out {
+  background-color: var(--color-danger);
+  box-shadow: 0 0 0 3px rgba(200, 75, 49, 0.2);
+}
+
+.status-label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.seat-numbers {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.seat-count {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-text-main);
+  line-height: 1;
+}
+
+.seat-total {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+}
+
+.seat-progress-bar {
+  width: 100%;
+  height: 6px;
+  background-color: var(--color-border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.seat-progress-fill {
+  height: 100%;
+  background-color: var(--color-accent);
+  border-radius: 99px;
+  transition: width 0.6s var(--ease-smooth);
+}
+
+/* Bento cells chi tiết địa điểm/thời gian */
+.bento-grid-meta {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.bento-cell {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.meta-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.meta-value {
+  font-size: 0.925rem;
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   5. Form Panel (Cột phải)
+   -------------------------------------------------------------------------- */
+.form-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 12px;
+}
+
+.form-header {
+  margin-bottom: 28px;
+}
+
+.form-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-main);
+  margin-bottom: 8px;
+}
+
+.form-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* Banner báo hết chỗ */
+.sold-out-banner {
+  background-color: #FDEDEC;
+  border: 1px solid #F5C6CB;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.banner-title {
+  font-weight: 600;
+  color: var(--color-danger);
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.banner-text {
+  font-size: 0.85rem;
+  color: #721C24;
+}
+
+/* Form Groups & Inputs */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.required {
+  color: var(--color-danger);
+}
+
+.form-input {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  padding: 12px 14px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-main);
+  outline: none;
+  transition: border-color 0.2s var(--ease-smooth), box-shadow 0.2s var(--ease-smooth);
+}
+
+.form-input::placeholder {
+  color: #A39E93;
+}
+
+.form-input:focus {
+  border-color: var(--color-text-main);
+  box-shadow: 0 0 0 2px rgba(24, 23, 22, 0.08);
+}
+
+/* Trạng thái lỗi Validation */
+.form-group.has-error .form-input {
+  border-color: var(--color-danger);
+  background-color: #FFFDFD;
+}
+
+.form-group.has-error .form-input:focus {
+  box-shadow: 0 0 0 2px rgba(200, 75, 49, 0.15);
+}
+
+.error-message {
+  display: none;
+  font-size: 0.775rem;
+  color: var(--color-danger);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.form-group.has-error .error-message {
+  display: block;
+}
+
+/* Nút Submit & Loading State */
+.submit-button {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: var(--color-accent);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s var(--ease-smooth), transform 0.1s var(--ease-smooth);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: var(--color-accent-hover);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: scale(0.99);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Spinner khi đang xử lý */
+.btn-spinner {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #FFFFFF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.submit-button.is-loading .btn-spinner {
+  display: inline-block;
+}
+
+.submit-button.is-loading .btn-text {
+  opacity: 0.85;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.form-feedback-error {
+  font-size: 0.85rem;
+  color: var(--color-danger);
+  background-color: #FDEDEC;
+  border: 1px solid #F5C6CB;
+  border-radius: 6px;
+  padding: 10px 14px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Modal / Pop-up thông báo thành công tích hợp QR Code
+   -------------------------------------------------------------------------- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(24, 23, 22, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.modal-dialog {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 480px;
+  padding: 36px;
+  box-shadow: var(--shadow-modal);
+  display: flex;
+  flex-direction: column;
+  animation: modalIn 0.3s var(--ease-smooth);
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-success);
+  background-color: rgba(42, 157, 143, 0.1);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 24px;
+}
+
+.ticket-box {
+  background-color: var(--color-surface-subtle);
+  border: 1px dashed var(--color-border-dark);
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.qr-container {
+  background-color: #FFFFFF;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-image {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: contain;
+}
+
+.ticket-details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 12px;
+}
+
+.ticket-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-label {
+  color: var(--color-text-muted);
+}
+
+.ticket-val {
+  color: var(--color-text-main);
+  font-weight: 600;
+}
+
+.ticket-code {
+  font-family: monospace;
+  background-color: #EAE6DD;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--color-text-main);
+  font-size: 0.8rem;
+}
+
+.close-modal-button {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s var(--ease-smooth);
+}
+
+.close-modal-button:hover {
+  background-color: #EAE6DD;
+}
+
+/* --------------------------------------------------------------------------
+   7. Responsive Design (Mobile & Tablet)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .layout-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 28px 20px;
+  }
+
+  .event-panel {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+    padding-right: 0;
+    padding-bottom: 32px;
+  }
+
+  .form-panel {
+    padding-left: 0;
+  }
+
+  .event-title {
+    font-size: 1.85rem;
+  }
+
+  .modal-dialog {
+    padding: 24px 20px;
+  }
+}
