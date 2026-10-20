@@ -11,28 +11,30 @@
 /* --- 1. BIẾN TOÀN CỤC (CSS VARIABLES) --- */
 :root {
   /* Brand Palette */
-  --color-red: #C41E3A;
-  --color-red-hover: #A0142C;
-  --color-green: #164A36;
-  --color-green-dark: #0D2E21;
-  --color-green-light: #23654B;
-  --color-gold: #D4AF37;
-  --color-gold-hover: #B89726;
-  --color-gold-light: #F9F3DC;
-  --color-snow: #F8F9FA;
-  --color-cream: #FDFBF7;
-  
+  --color-red: #c41e3a;
+  --color-red-hover: #a0142c;
+  --color-green: #164a36;
+  --color-green-dark: #0d2e21;
+  --color-green-light: #23654b;
+  --color-gold: #d4af37;
+  --color-gold-hover: #b89726;
+  --color-gold-light: #f9f3dc;
+  --color-snow: #f8f9fa;
+  --color-cream: #fdfbf7;
+
   /* Neutral & Text */
-  --color-dark: #1A1F1D;
-  --color-dark-surface: #222B27;
-  --color-text-main: #2D3748;
-  --color-text-muted: #6B7280;
-  --color-border: #E5E7EB;
+  --color-dark: #1a1f1d;
+  --color-dark-surface: #222b27;
+  --color-text-main: #2d3748;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
   --color-border-subtle: rgba(212, 175, 55, 0.25);
 
   /* Typography */
-  --font-heading: 'Merriweather', Georgia, serif;
-  --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: "Merriweather", Georgia, serif;
+  --font-body:
+    "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
 
   /* Spacing & Layout */
   --container-max: 1200px;
@@ -41,7 +43,9 @@
 
   /* Tactile Shadows & Borders (Anti-AI Standards) */
   --shadow-subtle: 0 2px 10px rgba(0, 0, 0, 0.04);
-  --shadow-card: 0 10px 25px -5px rgba(22, 74, 54, 0.08), 0 8px 10px -6px rgba(22, 74, 54, 0.05);
+  --shadow-card:
+    0 10px 25px -5px rgba(22, 74, 54, 0.08),
+    0 8px 10px -6px rgba(22, 74, 54, 0.05);
   --shadow-elevated: 0 20px 35px -10px rgba(196, 30, 58, 0.15);
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -55,7 +59,9 @@
 }
 
 /* --- 2. CSS RESET & NỀN TẢNG --- */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -96,7 +102,8 @@ button {
   outline: none;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -111,7 +118,9 @@ ul, ol {
   html {
     scroll-behavior: auto;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -257,7 +266,11 @@ ul, ol {
   width: 100%;
   height: var(--header-height);
   z-index: 1000;
-  transition: background-color var(--transition-normal), backdrop-filter var(--transition-normal), box-shadow var(--transition-normal), height var(--transition-normal);
+  transition:
+    background-color var(--transition-normal),
+    backdrop-filter var(--transition-normal),
+    box-shadow var(--transition-normal),
+    height var(--transition-normal);
   background-color: rgba(22, 74, 54, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -318,7 +331,7 @@ ul, ol {
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;
@@ -422,7 +435,12 @@ ul, ol {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(13, 46, 33, 0.92) 0%, rgba(22, 74, 54, 0.82) 50%, rgba(13, 46, 33, 0.9) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(13, 46, 33, 0.92) 0%,
+    rgba(22, 74, 54, 0.82) 50%,
+    rgba(13, 46, 33, 0.9) 100%
+  );
 }
 
 .hero-container {
@@ -673,16 +691,23 @@ ul, ol {
   scroll-snap-stop: always;
   background-color: var(--color-green-dark); /* Nền xanh lá đậm #0D2E21 */
   border: 1px solid rgba(212, 175, 55, 0.35);
-  box-shadow: 0 15px 35px -5px rgba(13, 46, 33, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 15px 35px -5px rgba(13, 46, 33, 0.25),
+    0 5px 15px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.4s var(--ease-human), box-shadow 0.4s var(--ease-human), border-color 0.4s var(--ease-human);
+  transition:
+    transform 0.4s var(--ease-human),
+    box-shadow 0.4s var(--ease-human),
+    border-color 0.4s var(--ease-human);
 }
 
 .glass-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 45px -8px rgba(13, 46, 33, 0.35), 0 10px 20px rgba(212, 175, 55, 0.25);
+  box-shadow:
+    0 25px 45px -8px rgba(13, 46, 33, 0.35),
+    0 10px 20px rgba(212, 175, 55, 0.25);
   border-color: rgba(212, 175, 55, 0.8);
 }
 
@@ -765,11 +790,7 @@ ul, ol {
   position: relative;
   width: 100%;
   height: 46%;
-  background: linear-gradient(
-    180deg,
-    var(--color-green-dark) 0%,
-    #092017 100%
-  );
+  background: linear-gradient(180deg, var(--color-green-dark) 0%, #092017 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 0.5rem 1.6rem 1.6rem;
@@ -783,7 +804,7 @@ ul, ol {
   font-family: var(--font-heading);
   font-size: 1.3rem;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #ffffff;
   line-height: 1.25;
   margin-bottom: 0.4rem;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -829,7 +850,7 @@ ul, ol {
 }
 
 .btn-pill-cta:hover {
-  background: #FFFFFF;
+  background: #ffffff;
   color: var(--color-green-dark);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(255, 255, 255, 0.45);
@@ -852,7 +873,7 @@ ul, ol {
   display: inline-flex;
   gap: 0.5rem;
   padding: 0.4rem;
-  background-color: #EAECE8;
+  background-color: #eaece8;
   border-radius: var(--radius-full);
   border: 1px solid rgba(22, 74, 54, 0.1);
   flex-wrap: wrap;
@@ -886,14 +907,16 @@ ul, ol {
 }
 
 .product-card {
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   overflow: hidden;
   box-shadow: var(--shadow-subtle);
   display: flex;
   flex-direction: column;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .product-card:hover {
@@ -905,7 +928,7 @@ ul, ol {
   position: relative;
   width: 100%;
   aspect-ratio: 1 / 1;
-  background: #F3F4F6;
+  background: #f3f4f6;
   overflow: hidden;
 }
 
@@ -985,7 +1008,7 @@ ul, ol {
 
 .product-original-price {
   font-size: 0.85rem;
-  color: #9CA3AF;
+  color: #9ca3af;
   text-decoration: line-through;
 }
 
@@ -1027,7 +1050,7 @@ ul, ol {
 /* --- 8. SPECIFICATIONS SECTION (ACCORDION) --- */
 .specs-section {
   padding: 7rem 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-top: 1px solid var(--color-border);
 }
 
@@ -1101,13 +1124,15 @@ ul, ol {
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   overflow: hidden;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .accordion-item.active {
   border-color: var(--color-gold);
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.12);
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .accordion-header {
@@ -1167,7 +1192,7 @@ ul, ol {
 }
 
 .accordion-body li::before {
-  content: '✦';
+  content: "✦";
   position: absolute;
   left: 0;
   color: var(--color-gold);
@@ -1182,7 +1207,11 @@ ul, ol {
 }
 
 .cta-banner-box {
-  background: linear-gradient(135deg, var(--color-green-dark) 0%, var(--color-green) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-green-dark) 0%,
+    var(--color-green) 100%
+  );
   border: 1px solid var(--color-gold);
   border-radius: var(--radius-lg);
   padding: 3.5rem;
@@ -1302,7 +1331,9 @@ ul, ol {
   padding: 1.5rem;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s var(--ease-human), visibility 0.3s var(--ease-human);
+  transition:
+    opacity 0.3s var(--ease-human),
+    visibility 0.3s var(--ease-human);
 }
 
 .modal-backdrop.show {
@@ -1312,7 +1343,7 @@ ul, ol {
 
 .modal-dialog {
   position: relative;
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: var(--radius-lg);
   max-width: 520px;
   width: 100%;
@@ -1418,7 +1449,7 @@ ul, ol {
 .gallery-modal-main-img-wrap {
   width: 100%;
   aspect-ratio: 16 / 11;
-  background: #F3F4F6;
+  background: #f3f4f6;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin-bottom: 1rem;
@@ -1600,7 +1631,10 @@ ul, ol {
     transform: translateY(-120%);
     opacity: 0;
     visibility: hidden;
-    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+    transition:
+      transform var(--transition-normal),
+      opacity var(--transition-normal),
+      visibility var(--transition-normal);
   }
 
   .nav-menu.active {
@@ -1821,7 +1855,9 @@ ul, ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity 0.2s ease, transform 0.3s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.3s ease;
 }
 
 .product-main-view-img:hover {
@@ -1948,7 +1984,11 @@ ul, ol {
 
 /* Price Box */
 .product-price-section {
-  background: linear-gradient(135deg, rgba(22, 74, 54, 0.05), rgba(212, 175, 55, 0.08));
+  background: linear-gradient(
+    135deg,
+    rgba(22, 74, 54, 0.05),
+    rgba(212, 175, 55, 0.08)
+  );
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 16px;
   padding: 1.25rem 1.5rem;
